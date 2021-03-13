@@ -42,7 +42,6 @@ public class IndexController {
         return "search";
     }
 
-
     @GetMapping("/blog/{id}")  //显示 博客详情
     public String blog(@PathVariable Long id, Model model) {
         model.addAttribute("blog", blogService.getAndConvert(id));
@@ -54,4 +53,5 @@ public class IndexController {
         model.addAttribute("newblogs",blogService.listRecommendBlogTop(3));
         return "_fragments :: newblogList";
     }
+
 }
